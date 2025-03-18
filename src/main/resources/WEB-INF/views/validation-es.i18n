@@ -9,3 +9,7 @@
 # they accept any liabilities with respect to them.
 
 acme.validation.flight.identifierNumber.message = Las dos primeras letras del número de identificación deben corresponder a las iniciales del nombre del gerente.
+
+acme.validation.flight.identifierNumber.initials.message: Las dos primeras letras del número identificador del gerente de la aerolínea deben corresponder a sus iniciales.
+
+acme.validation.flight.identifierNumber.unique.message: El número identificador del gerente de la aerolínea debe ser único, no puede haber dos iguales

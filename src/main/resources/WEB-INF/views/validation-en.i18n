@@ -9,3 +9,7 @@
 # they accept any liabilities with respect to them.
 
 acme.validation.flight.identifierNumber.message = The first two letters of the identifier number must correspond to the managers's name initials
+
+acme.validation.flight.identifierNumber.initials.message = The airline manager's identifierNumber's two first letters must correspond to their initials.
+
+acme.validation.flight.identifierNumber.unique.message = The airline manager's identifierNumber must be unique, there cannot be to equal.
