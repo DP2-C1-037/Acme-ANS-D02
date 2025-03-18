@@ -9,13 +9,12 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Target(ElementType.FIELD)
+@Constraint(validatedBy = LegValidator.class)
+@Target(ElementType.TYPE) // Se aplica a la clase Leg en lugar del campo
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = IncidentCountsValidator.class)
+public @interface ValidLeg {
 
-public @interface ValidIncidentCounts {
-
-	String message() default "{acme.validation.incidents-count.message}";
+	String message() default "";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 }

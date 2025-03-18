@@ -13,7 +13,7 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 	@Override
 	public boolean isValid(final AirlineManager airlineManager, final ConstraintValidatorContext context) {
 		AirlineManagerRepository airlineManagerRepository = SpringHelper.getBean(AirlineManagerRepository.class);
-		String initials = AirlineManagerValidator.getInitials(airlineManager.getUserAccount().getIdentity().getName(), airlineManager.getUserAccount().getIdentity().getName());
+		String initials = AirlineManagerValidator.getInitials(airlineManager.getUserAccount().getIdentity().getName(), airlineManager.getUserAccount().getIdentity().getSurname());
 		String identifierNumberToValidate = airlineManager.getIdentifierNumber().substring(0, initials.length());
 		boolean result = initials.equals(identifierNumberToValidate);
 		if (!result)
