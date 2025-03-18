@@ -21,3 +21,7 @@ acme.validation.service.promotionCode.message = El código promocional debe coin
 acme.validation.customer.identifier.message = Los dos o tres primeros caracteres del identificador único del cliente deben coincidir con sus iniciales
 
 acme.validation.technician.licenseNumber.message = Los dos primeros caracteres del número de licencia deben coincidir con las iniciales del técnico
+
+acme.validation.airlineManager.identifierNumber.initials.message: Las dos primeras letras del número identificador del gerente de la aerolínea deben corresponder a sus iniciales.
+
+acme.validation.airlineManager.identifierNumber.unique.message: El número identificador del gerente de la aerolínea debe ser único, no puede haber dos iguales

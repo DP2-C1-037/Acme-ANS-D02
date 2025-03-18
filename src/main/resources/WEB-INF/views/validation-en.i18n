@@ -21,3 +21,7 @@ acme.validation.service.promotionCode.message = The promotion code must match th
 acme.validation.customer.identifier.message = The customer identifier first two or three letters must correspond to their initials
 
 acme.validation.technician.licenseNumber.message = The first two letters of the license number must correspond to the technician's initials
+
+acme.validation.airlineManager.identifierNumber.initials.message = The airline manager's identifierNumber's two first letters must correspond to their initials.
+
+acme.validation.airlineManager.identifierNumber.unique.message = The airline manager's identifierNumber must be unique, there cannot be to equal.
