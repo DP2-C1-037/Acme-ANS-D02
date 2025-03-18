@@ -37,12 +37,12 @@ public class Leg extends AbstractEntity {
 	private String				flightNumber;
 
 	@Mandatory
-	@ValidMoment(min = "2000/01/01 00:00")
+	@ValidMoment(min = "2000/01/01 00:00", max = "2201/01/01  00:00")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledDeparture;
 
 	@Mandatory
-	@ValidMoment(min = "2000/01/01 00:00")
+	@ValidMoment(min = "2000/01/01 00:00", max = "2201/01/01  00:00")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
 
@@ -60,22 +60,22 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Flight				flight;
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Airport				departureAirport;
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Airport				arrivalAirport;
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Aircraft			deployedAircraft;
 
 }

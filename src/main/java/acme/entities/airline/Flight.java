@@ -16,6 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
+import acme.datatypes.FlightSelfTransfer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,17 +28,17 @@ public class Flight extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(min = 50, max = 50)
 	@Automapped
 	private String				tag;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				requiresSelfTransfer;
+	private FlightSelfTransfer	requiresSelfTransfer;
 
 	@Mandatory
-	@ValidMoney
+	@ValidMoney(min = 0, max = 1000000)
 	@Automapped
 	private Money				cost;
 
@@ -84,6 +85,6 @@ public class Flight extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private Airline airline;
+	@ManyToOne(optional = false)
+	private AirlineManager airlineManager;
 }
