@@ -9,7 +9,7 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface AirlineManagerRepository extends AbstractRepository {
 
-	@Query("SELECT COUNT(L) FROM AirlineManager am WHERE am.identifierNumber = :identifierNumber")
+	@Query("SELECT COUNT(am) > 0 FROM AirlineManager am WHERE am.identifierNumber = :identifierNumber")
 	public Boolean identifierNumberAlreadyExists(String identifierNumber);
 
 }

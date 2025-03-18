@@ -36,12 +36,12 @@ public class AirlineManager extends AbstractRole {
 	private String				identifierNumber;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0, max = 120)
 	@Automapped
 	private Integer				experienceYears;
 
 	@Mandatory
-	@ValidMoment(min = "1965/01/01 00:00", past = true)
+	@ValidMoment(min = "2000/01/01 00:00", past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				birthDate;
 
@@ -55,7 +55,7 @@ public class AirlineManager extends AbstractRole {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Airline				airline;
 
 }
