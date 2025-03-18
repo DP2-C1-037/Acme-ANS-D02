@@ -17,9 +17,9 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 		String identifierNumberToValidate = airlineManager.getIdentifierNumber().substring(0, initials.length());
 		boolean result = initials.equals(identifierNumberToValidate);
 		if (!result)
-			super.state(context, false, "identifierNumber", "acme.validation.flight.identifierNumber.initials.message");
+			super.state(context, false, "identifierNumber", "acme.validation.airlineManager.identifierNumber.initials.message");
 		if (!airlineManagerRepository.identifierNumberAlreadyExists(identifierNumberToValidate)) {
-			super.state(context, false, "identifierNumber", "acme.validation.flight.identifierNumber.unique.message");
+			super.state(context, false, "identifierNumber", "acme.validation.airlineManager.identifierNumber.unique.message");
 			result = false;
 		}
 
