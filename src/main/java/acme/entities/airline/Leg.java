@@ -7,13 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidLeg;
 import acme.datatypes.LegStatus;
@@ -46,10 +46,8 @@ public class Leg extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
 
-	@Mandatory
-	@ValidNumber(min = 1, max = 24) // Consultar -> CAMBIAR A DERIVADA
-	@Automapped
-	private Integer				duration;
+	@Transient
+	private Double				duration;
 
 	@Mandatory
 	@Valid
