@@ -83,6 +83,11 @@ public class Flight extends AbstractEntity {
 	// Relationships
 
 
+	/*
+	 * PREGUNTAR. Inicialmente, un objeto" de la clase "Flight" podría no tener ningún leg asociado.
+	 * La comprobación de que un objeto "Flight" tiene al menos un "Leg" es necesaria antes de poder publicar un vuelo;
+	 * es entonces cuando se debe rechazar la posibilidad de publicar si un vuelo no tiene ningún "Leg" asociado.
+	 */
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
