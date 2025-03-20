@@ -46,13 +46,15 @@ public class Leg extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
 
-	@Transient
-	private Double				duration;
-
 	@Mandatory
 	@Valid
 	@Automapped
 	private LegStatus			status;
+
+	// Derived attributes
+
+	@Transient
+	private Double				duration;
 
 	// Relationships
 
